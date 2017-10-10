@@ -11,3 +11,15 @@
 - EL código debe estar compuesto por 1 función: isValidCard.
 
 - El usuario no debe poder ingresar un campo vacío.
+
+#### PROCEDIMIENTO:
+
+1. Preguntar por el número de la tarjeta.
+
+2. Pasar los números a un array en orden inverso.
+
+3. Aplicar la operacion a los números de las posiciones pares.
+
+4. Sumar los dígitos y nuevos dígitos.
+
+5. Comprobar si es una **tarjeta válida**.
