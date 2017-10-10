@@ -1,18 +1,37 @@
 var tarjet = prompt("Ingrese número de tarjeta");
 var newArray = [];
-var num = 0;
+var sum = 0;
 
 function isValidCard (tarjet,newArray){
   for(var i=0; i< tarjet.length; i++){
-    if(i % 2 === 1 && tarjet.length !== 0){
-      num = tarjet.substr(i,1) * 2;
-     parseInt(num / 10) + num % 10;
+  newArray.push(i);
+  for(var j=0;j<newArray.length; j++){
+    var item = newArray.pop();
+    newArray.splice(j,0,item);
+  
+  for(var y=0; y<newArray.length;  y++){
+    if(newArray.length % 2 === 0){
+      var firstNumber = newArray[y] % 10;
+      var secondNumber = parseInt(newArray[y] / 10);
+      var sumDigitos = firstNumber + secondNumber;
     }
     else{
-      alert("Undefined");
+      return newArray[y];
     }
+    
+    for(var x=0; x<newArray.length; x++){
+      if(newArray[x] % 2 === 0){
+        sum += newArray[x];
+      }
     }
-    return newArray.push(num);
+    if(sum % 10 === 0){
+      return "TARJETA VÁLIDA";
+    }
+    else{
+      return "TARJETA INVÁLIDA";
+    }
+  }
 }
-
-isValidCard(tarjet, newArray);
+}
+  return newArray;
+  }
